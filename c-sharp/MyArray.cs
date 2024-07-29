@@ -27,4 +27,30 @@ public class MyArray
         // Delete
         b.Remove(7); //O(n)
     }
+
+    public int[] TwoSum(int[] nums, int target)
+    {
+        int[] indices = new int[2];
+
+        if(nums.Length <= 1)
+        {
+            return indices;
+        }
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            int num_to_find = target - nums[i];
+            for(int j = i+1; j < nums.Length; j++)
+            {
+                if(num_to_find == nums[j])
+                {
+                    indices[0] = i;
+                    indices[1] = j;
+                    return indices;
+                }
+            }
+        }
+
+        return indices;
+    }
 }
