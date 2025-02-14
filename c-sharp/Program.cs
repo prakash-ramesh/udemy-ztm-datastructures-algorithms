@@ -14,3 +14,7 @@ int[] indices = ma.TwoSum(new int[] {1,3,7,2,9}, 11);
 Console.WriteLine("Two Sum:");
 Console.WriteLine(indices[0].ToString());
 Console.WriteLine(indices[1].ToString());
+int[] indices1 = ma.TwoSumDict(new int[] {1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1}, 11);
+Console.WriteLine("Two Sum:");
+Console.WriteLine(indices1[0].ToString());
+Console.WriteLine(indices1[1].ToString());

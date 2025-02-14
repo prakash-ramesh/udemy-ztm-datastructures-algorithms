@@ -53,4 +53,35 @@ public class MyArray
 
         return indices;
     }
+
+    public int[] TwoSumDict(int[] nums, int target)
+    {
+        int[] indices = new int[2];
+
+        if(nums.Length <= 1)
+        {
+            return indices;
+        }
+
+        Dictionary<int, int> ntfMap = new Dictionary<int, int>();
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            int num_to_find = target - nums[i];
+            
+            if (!ntfMap.ContainsKey(nums[i])) {
+                if (!ntfMap.ContainsKey(num_to_find)) {
+                    ntfMap.Add(num_to_find, i);
+                } else {
+                    ntfMap[num_to_find] = i;
+                }
+            } else {
+                indices[0] = ntfMap[nums[i]];
+                indices[1] = i;
+                return indices;
+            }
+        }
+
+        return indices;
+    }
 }
